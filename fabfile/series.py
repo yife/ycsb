@@ -80,9 +80,9 @@ def initialize(the_hosts, db):
     #    sudo('service atd start')
     #    sudo('sudo yum install -y java-1.7.0-openjdk-devel')
     #    with cd('/opt'):
-    #        put('../distribution/target/ycsb-0.1.4.tar.gz', '/run/shm/ycsb.tar.gz')
+    #        put('../distribution/target/ycsb-0.1.4.tar.gz', '/dev/shm/ycsb.tar.gz')
     #        sudo('rm -r ycsb-0.1.4')
-    #        sudo('tar xzvf /run/shm/ycsb.tar.gz')
+    #        sudo('tar xzvf /dev/shm/ycsb.tar.gz')
     #        sudo('ln -s /opt/ycsb-0.1.4 /opt/ycsb')
     #        print 'ycsb deployed'
         sudo('mkdir -p %s ; chmod 1777 %s' % (db_home, db_home))

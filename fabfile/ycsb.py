@@ -221,8 +221,8 @@ def kill(force=False):
 
 @roles('client')
 def clean_logs(force=False, db=None):
-    """Removes all logs from /run/shm"""
-    home = '/run/shm'
+    """Removes all logs from /dev/shm"""
+    home = '/dev/shm'
     if db:
         database = get_db(db)
         home = database['home']
@@ -239,9 +239,10 @@ def deploy():
     """Builds and deploys YCSB to the clients"""
     _build_and_upload()
     client1 = env.roledefs['client'][0]
-    run('scp %s:ycsb.tar.gz .' % client1)
+    run('scp -i ~/.ssh/id_rsa %s:ycsb.tar.gz .' % client1)
+    home_dir = run('echo $HOME')
     with cd('/opt'):
-        run('ln -sf ycsb-0.1.4 ycsb')
-        run('rm -rf ycsb-0.1.4')
-        run('tar xzvf ~/ycsb.tar.gz')
+        sudo('ln -sf ycsb-0.1.4 ycsb')
+        sudo('rm -rf ycsb-0.1.4')
+        sudo('tar xzvf %s' % (os.path.join(home_dir, 'ycsb.tar.gz')))
         

@@ -134,7 +134,7 @@ databases = {
 
     'aerospike' : {
         'name': 'aerospike',    #name of the database (used to form the logfile name)
-        'home': '/run/shm',     #database home, to put logs there
+        'home': '/dev/shm',     #database home, to put logs there
         'command': 'aerospike', #database name to pass to ycsb command
         'properties': {         #properties to pass to ycsb command as -p name=value
             'host': 'e1.local',  #database connection params
@@ -146,7 +146,7 @@ databases = {
 
     'couchbase' : {
         'name': 'couchbase',
-        'home': '/run/shm',
+        'home': '/dev/shm',
         'command': 'couchbase',
         'properties': {
             'couchbase.hosts': 'e1.local,e2.local,e3.local,e4.local',
@@ -161,7 +161,7 @@ databases = {
 
     'cassandra' : {
         'name': 'cassandra',
-        'home': '/run/shm',
+        'home': '/dev/shm',
         'command': 'cassandra-10',
         'properties': {
             'hosts': 'e1.local,e2.local,e3.local,e4.local',
@@ -170,7 +170,7 @@ databases = {
 
     'mongodb' : {
         'name': 'mongodb',
-        'home': '/run/shm',
+        'home': '/dev/shm',
         'command': 'mongodb',
         'properties': {
             'mongodb.url': 'mongodb://localhost:27017',
@@ -182,7 +182,7 @@ databases = {
 
     'basic' : { #fake database
         'name': 'basic',
-        'home': '/run/shm',
+        'home': '/dev/shm',
         'command': 'basic',
         'properties': {
             'basicdb.verbose': 'false',
@@ -191,7 +191,7 @@ databases = {
 
 }
 
-Note that /run/shm is the tmpfs - in-memory filesystem. We use it to avoid 
+Note that /dev/shm is the tmpfs - in-memory filesystem. We use it to avoid 
 performance issues related to write logs on client side.
 
 Workloads

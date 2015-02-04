@@ -4,10 +4,10 @@ databases = {
 
     'aerospike' : {
         'name': 'aerospike',    #name of the database (used to form the logfile name)
-        'home': '/run/shm',     #database home, to put logs there
+        'home': '/dev/shm',     #database home, to put logs there
         'command': 'aerospike', #database name to pass to ycsb command
         'properties': {         #properties to pass to ycsb command as -p name=value
-            'host': 'e1.citrusleaf.local',  #database connection params
+            'host': 'load15',  #database connection params
             'port': 3000,
             'ns': 'test',
             'set': 'YCSB',
@@ -25,7 +25,7 @@ databases = {
 
     'couchbase' : {
         'name': 'couchbase',
-        'home': '/run/shm',
+        'home': '/dev/shm',
         'command': 'couchbase',
         'properties': {
             'couchbase.hosts': 'e1.citrusleaf.local,e2.citrusleaf.local,e3.citrusleaf.local,e4.citrusleaf.local',
@@ -40,7 +40,7 @@ databases = {
 
     'couchbase2' : {
         'name': 'couchbase',
-        'home': '/run/shm',
+        'home': '/dev/shm',
         'command': 'couchbase2',
         'properties': {
             'couchbase.hosts': 'e2.citrusleaf.local,e1.citrusleaf.local,e3.citrusleaf.local,e4.citrusleaf.local',
@@ -92,7 +92,7 @@ sleep 3; \
     'mongodb' : {
         'name': 'mongodb',
         'home': '/root/ycsb',        
-        #'home': '/run/shm',
+        #'home': '/dev/shm',
         'command': 'mongodb',
         'properties': {
             'mongodb.url': 'mongodb://localhost:27018',
@@ -111,7 +111,7 @@ sleep 3; \
 
     'hbase' : {
         'name': 'hbase',
-        'home': '/run/shm',
+        'home': '/dev/shm',
         'command': 'hbase',
         'properties': {
             'columnfamily': 'family',
@@ -121,7 +121,7 @@ sleep 3; \
 
     'basic' : { #fake database
         'name': 'basic',
-        'home': '/run/shm',
+        'home': '/dev/shm',
         'command': 'basic',
         'properties': {
             'basicdb.verbose': 'false',

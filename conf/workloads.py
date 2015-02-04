@@ -5,15 +5,18 @@ TIME_DURATION = 60*40 #40 Minutes
 data = {    #global YSCB properties
     #'recordcount': 200000000,  #SSD
     #'recordcount': 500000000,  #SSD
-    'recordcount': 50000000,    #RAM
-    'fieldcount': 10,
+    # 'recordcount': 50000000,    #RAM
+    'recordcount': 1000,
+    # 'fieldcount': 10,
+    'fieldcount': 1,
     'fieldlength': 10,
     'fieldnameprefix': 'f',
     #'operationcount': 10000000,
     #'operationcount': 200000000,    #>10min for Aerospike and Couchbase
     #'operationcount': 50000000,    #>10min for Cassandra and MongoDB
     
-    'operationcount': 1000000*TIME_DURATION, # 40min at 1000k
+    # 'operationcount': 1000000*TIME_DURATION, # 40min at 1000k
+    'operationcount': 6*TIME_DURATION,
     'maxexecutiontime': TIME_DURATION,      # 40min
     #'maxexecutiontime': 600,      # 10min
 
