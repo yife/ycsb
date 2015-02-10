@@ -6,9 +6,9 @@ data = {    #global YSCB properties
     #'recordcount': 200000000,  #SSD
     #'recordcount': 500000000,  #SSD
     # 'recordcount': 50000000,    #RAM
-    'recordcount': 1000,
+    'recordcount': 1000000,
     # 'fieldcount': 10,
-    'fieldcount': 1,
+    'fieldcount': 100,
     'fieldlength': 10,
     'fieldnameprefix': 'f',
     #'operationcount': 10000000,
@@ -16,7 +16,7 @@ data = {    #global YSCB properties
     #'operationcount': 50000000,    #>10min for Cassandra and MongoDB
     
     # 'operationcount': 1000000*TIME_DURATION, # 40min at 1000k
-    'operationcount': 6*TIME_DURATION,
+    'operationcount': 2147483647,
     'maxexecutiontime': TIME_DURATION,      # 40min
     #'maxexecutiontime': 600,      # 10min
 
@@ -63,4 +63,8 @@ workloads = {
         'name': 'workloadg',
         'propertyfiles': [ root + '/workloads/workloadg' ],
     },
+    'H': {  #Mostly Read heavy workload
+    'name': 'workloadh',
+    'propertyfiles': [ root + '/workloads/workloadh' ],
+},
 }

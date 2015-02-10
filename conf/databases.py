@@ -7,9 +7,9 @@ databases = {
         'home': '/dev/shm',     #database home, to put logs there
         'command': 'aerospike', #database name to pass to ycsb command
         'properties': {         #properties to pass to ycsb command as -p name=value
-            'host': 'load15',  #database connection params
+            'host': hosts.env.roledefs['server'][0],  #database connection params
             'port': 3000,
-            'ns': 'test',
+            'ns': 'usertest',
             'set': 'YCSB',
         },
         'status': {
